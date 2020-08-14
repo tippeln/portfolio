@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tsubomi* | tippeln's Portfolio</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148916871-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-148916871-1');
+</script>
+    <meta name="keywords" content="Portfolio">
+    <meta name="description" content="Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="。" />
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap_min.css">
+    <link rel="stylesheet" href="css/sanitize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="delayed-image">
+    <div class="wrapper">
+        <header>
+            <section id="g-nav" class="section">
+                <nav>
+
+                    <div class="g-nav pc-mode">
+
+                        <div>
+                            <!-- <a href="index.html"><img src="images/logo.png" alt="" height="30px"></a> -->
+                            <a href="index.html"></a>
+                        </div>
+                        <div class="menu"><a href="index.html" alt="">Home</a></div>
+                        <div class="menu"><a href="about.html" alt="">About</a></div>
+                        <div class="menu"><a href="portfolio.html" alt="">Portfolio</a></div>
+                        <div class="menu"><a href="contact.php" alt="">Contact</a></div>
+                    </div>
+                    <div class="g-nav-m m-mode">
+                        <div class="cp_offcm01">
+                            <input type="checkbox" id="cp_toggle01">
+                            <label for="cp_toggle01"><span></span></label>
+                            <div class="cp_menu">
+                                <ul>
+                                    <li class="menu-m"><a href="index.html" alt="">Home</a></li>
+                                    <li class="menu-m"><a href="about.html" alt="">About</a></li>
+                                    <li class="menu-m"><a href="portfolio.html" alt="">Portfolio</a></li>
+                                    <li class="menu-m"><a href="contact.php" alt="">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="m-contents">
+                            <h1><a href="index.html"></a></h1>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main>
+            <section class="pc-mode">
+                <div class="hero pc-mode">
+                    <div id="slide" class="pc-mode">
+                        <center><ul>
+                            <li><a href=""><img src="images/photo01.jpg" alt=""></a></li>
+                            <li><a href=""><img src="images/photo02.jpg" alt=""></a></li>
+                            <li><a href=""><img src="images/photo03.jpg" alt=""></a></li>
+                            <li><a href=""><img src="images/photo04.jpg" alt=""></a></li>
+                        </ul></center>
+                    </div>
+                    <div class="title pc-mode">
+                        <center><img src="images/title_logo.png" width="200px" alt=""></center><br>
+                        <p><small>東京在住。小学生2人の母。元ユーザー系Sier企業SE。<br>
+                                11年間専業主婦として過ごし、現在は独立系Sier企業でSEとして就業中。<br>
+                                WワークとしてWebサイト制作にも携わっている。
+                            </small></p>
+                    </div>
+                </div>
+            </section>
+            <section class="m-mode">
+                <div class="hero m-mode">
+                    <div class="m-mode">
+                        <ul>
+                            <li><a href=""><img src="images/photo01.jpg" alt="" width="100%"></a></li>
+                        </ul>
+                    </div>
+                    <div class="title m-mode">
+                        <center><img src="images/title_logo.png" width="200px" alt=""></center><br>
+                        <p><small>東京在住。小学生2人の母。元ユーザー系Sier企業SE。<br>
+                                11年間専業主婦として過ごし、現在は独立系Sier企業でSEとして就業中。<br>
+                                WワークとしてWebサイト制作にも携わっている。
+                            </small></p>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p><small class="center">Copyright &copy2019 Tsubomi* All Rights Reserved.</small></p>
+        </footer>
+    </div>
+    <script>
+    $(function() {
+        // 設定
+        var $width = 640; // 横幅
+        var $height = 480; // 高さ
+        var $interval = 6000; // 切り替わりの間隔（ミリ秒）
+        var $fade_speed = 2000; // フェード処理の早さ（ミリ秒）
+        $("#slide ul li").css({ "position": "relative", "overflow": "hidden", "width": $width, "height": $height });
+        $("#slide ul li").hide().css({ "position": "absolute", "top": 0, "left": 0 });
+        $("#slide ul li:first").addClass("active").show();
+        setInterval(function() {
+            var $active = $("#slide ul li.active");
+            var $next = $active.next("li").length ? $active.next("li") : $("#slide ul li:first");
+            $active.fadeOut($fade_speed).removeClass("active");
+            $next.fadeIn($fade_speed).addClass("active");
+        }, $interval);
+    });
+    </script>
+</body>
+
+</html>

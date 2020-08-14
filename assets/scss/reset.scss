@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Noto+Sans+JP');
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani|Questrial|Open+Sans+Condensed:300');
+$themeFont: 'Rajdhani';
+// $themeFont: 'Questrial';
+// $themeFont: 'Open Sans Condensed';
+
+@media screen and (max-width: 768px) {
+  :root {
+    /* スマホの基準となるフォントサイズを解像度に応じて変更 */
+    font-size: calc(1vw + 1vh + .3vmin);
+  }
+}
+/*
+* サイト共通およびリセット設定
+*/
+html {
+  /* 初期基本フォント */
+  font-family: sans-serif;
+  /* remのフォント基準単位(10px) ブラウザのサイズ設定に対応する%で指定 */
+  font-size: 62.5%;
+  /* スマホ横位置の文字サイズ変更なし */
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  /* OSXのSafari/Chromeの文字のアニメーション時のチラツキ解除*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* html以下全ての要素に対して */
+  * {
+    /* padding/border差し引きなし */
+    box-sizing: border-box;
+    /* 内外余白を削除 */
+    margin: 0;
+    padding: 0;
+  }
+}
+body {
+  font-family: 'Noto Sans JP', 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  /* 基本の文字サイズ */
+  font-size: 1.4rem;
+  /* 黒の文字色はコントラストが強いのでやや濃いグレー */
+  color: #333;
+  /* 全ての文字の上下の行間余白を削除 */
+  line-height: 1.5;
+  /* 全体背景色(上色,下色) */
+  /*background: linear-gradient(#fff,#eee);*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: 1;
+  font-family: $themeFont;
+  @media screen and (max-width: 768px) {
+    /* スマホ時は改行を除去 */
+    br {
+      display: none;
+    }
+  }
+}
+p {
+  line-height: 1;
+  /* 字詰め */
+  font-feature-settings: "palt" 1;
+  /* 両端揃え */
+  text-align: justify;
+}
+ul,ol {
+  li {
+    list-style-type: none;
+    &.active {
+      background-color: #fff;
+    }
+  }
+}
+ul {
+  list-style: none;
+}
+/* 画像の表示崩れを調整 */
+img {
+  /* 画像の下の隙間を取り除く */
+  display: block;
+  height: auto;
+  /* 親要素からのはみ出しを防ぐ */
+  max-width: 100%;
+  border: 0;
+  /* 比率の差から出る余った領域をトリミング */
+  object-fit: cover;
+  /* x軸0%左揃え100%右揃え y軸0%上揃え100%下揃え */
+  object-position: 50% 20%;
+}
+a {
+  background: transparent;
+  text-decoration: none;
+  color: #333;
+  &:hover {
+    color: #333;
+  }
+}
+:hover {
+  // ホバーに滑らかなアニメーション
+  transition: all ease 0.4s;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  text-align: left;
+  vertical-align: top;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.curning {
+  // 字詰め設定
+  letter-spacing: -0.05em;
+}
+.marker {
+  background: linear-gradient(transparent 60%, #ffff33 60%);
+}
+.cap {
+  /* 注釈の※後の2行目以降は1字下げ */
+  padding-left: 1em;
+  text-indent: -1em;
+  font-size: 0.8rem;
+  &::before {
+    content: "※";
+    margin-right: 5px;
+  }
+}
+
+/* 解像度が768px以下の設定(スマホ対応) */
+/* 768px以下でかつスマホを横に倒したときの設定(ランドスケープ対応) */
+// @media (max-width: 768px) and (orientation: landscape) {
+// }
+/* DP比が2倍以上のとき高解像度の画像に置き換え */
+// @media screen and (min-device-pixel-ratio: 2) {
+//   .hero {
+//     background: url("images/herox2.png") 0 0 no-repeat;
+//     background-size: 960px 300px;
+//   }
+// }
+
+//---------------------------
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+legend,
+nav,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+audio,
+canvas,
+label,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+hr {
+  height: 0;
+  -moz-box-sizing: content-box;
+       box-sizing: content-box;
+}
+b,
+strong {
+  font-weight: bold;
+}
+small {
+  font-size: 85%;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 80%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -.25em;
+}
+sub {
+  bottom: -.25em;
+}
+dfn {
+  font-style: italic;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+mark {
+  color: #000;
+  background: #fff;
+}
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+}
+pre {
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  vertical-align: middle;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+progress {
+  vertical-align: baseline;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+button,
+select {
+  text-transform: none;
+}
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+legend {
+  padding: 0;
+  border: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="search"] {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  -webkit-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+input::-moz-placeholder {
+  opacity: 1;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 4px 0 0;
+  line-height: normal;
+}
+textarea {
+  padding: 0;
+  vertical-align: top;
+}
+button {
+  overflow: visible;
+}

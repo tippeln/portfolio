@@ -1,0 +1,5 @@
+*wp-includes/
+*wp-admin/
+*node_modules/
+sftp-config.json
+
